@@ -4,39 +4,53 @@ using UnityEngine;
 
 public class SnowmanMovement : MonoBehaviour
 {
+
+    // +----------------------+------------------------------------------------------------------
+    // | Fields & Properties  |
+    // +----------------------+
+
+    /* Snowman Movement Speed */
     [SerializeField]
     private float speed = 1;
 
+    /* Direction snowman is moving in */
     private Vector3 direction;
 
 
-    // Start is called before the first frame update
+    // +-----------------------+------------------------------------------------------------------
+    // |  Basic Unity Methods  |
+    // +-----------------------+
+
+    /* Start is called before the first frame update */
     void Start()
     {
+        // Initialize Snowman direction to left
         direction = Vector3.left;
     }
 
-    // Update is called once per frame
+
+    /* Update is called once per frame */
     void Update()
     {
-        //Debug.Log(direction.x);
+        // Move Snowman according to 'direction'
         this.transform.Translate(direction * Time.deltaTime * speed);
     }
 
+    // +-----------------------+------------------------------------------------------------------
+    // |  More Unity Methods   |
+    // +-----------------------+
+
+    /* Enter if collision with a trigger collider occurs*/
     void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.Log("Entered OnTrigger");
-        //Debug.Log(other.gameObject.tag);
+        // if Snowman collided with the right boundary trigger collider
         if (other.gameObject.tag == "Right Boundary")
-        {
-            Debug.Log("Right Boundary Collision");
+            // Change 'direction' to left
             direction = Vector3.left;
-        }
 
+        // if Snowman collided with the right boundary trigger collider
         if (other.gameObject.tag == "Left Boundary")
-        {
-            Debug.Log("Left Boundary Collision");
+            // Change 'direction' to right
             direction = Vector3.right;
-        }
     }
 }
