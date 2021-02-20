@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Right Boundary
   - Left Boundary
+  - Slide Top
+  - Slide Bot
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Penguin Right Side
+  - Penguin Left Side
   - 
   - 
   - 
@@ -42,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Penguin Right Side
+    uniqueID: 2991355071
+    locked: 0
+  - name: Penguin Left Side
+    uniqueID: 1718778665
     locked: 0
